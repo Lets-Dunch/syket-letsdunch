@@ -1,0 +1,40 @@
+.container-fluid{
+    padding-right: 50px !important;
+    padding-left: 50px !important;
+}
+
+.profile__image{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0px 27px rgba(0, 0, 0, .5);
+    border: 2px solid white;
+    position: relative;
+}
+.edit-box{
+    width: 30px; 
+    height: 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e63946;
+    border-radius: 50%;
+    color: white;
+    padding: 3px;
+    position: absolute;
+    top: 48%;
+    left: 16.5%;
+    cursor: pointer;
+
+}
+.image-edit{
+    font-size: 1.3rem !important;
+}
+.file-input{
+    display:none;
+}
+label{
+    margin-bottom: 0 !important;
+    cursor: pointer;
+}
