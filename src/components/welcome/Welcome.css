@@ -1,0 +1,53 @@
+.welcome{
+    background-color: #e63946;
+    height: 100vh;
+    width: 100%;
+    color: white;
+  }
+  .container{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .3s;
+  }
+  .heading{
+    animation: heading-animation .8s ease-out;
+  }
+  .sub-heading{
+    animation: sub-heading-animation .8s ease-out;
+  }
+  
+  
+  @keyframes heading-animation{
+    0%{
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+  
+    80%{
+      transform: translateX(40px);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  @keyframes sub-heading-animation{
+    0%{
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  
+    80%{
+      transform: translateX(-40px);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  

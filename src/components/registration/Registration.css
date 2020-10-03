@@ -1,0 +1,62 @@
+.row{
+    margin-right: 0px !important;
+}
+.registration__leftImage{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+}
+.registration__logo{
+    height: 100px;
+}
+.registration--heading-tertiary{
+    margin-top: 30px;
+}
+.registration__button--facebook{
+    margin-top: 10px;
+    background-color: #4267B2 !important;
+    color: white !important; 
+    width: 420px;
+}
+.facebook__icon{
+    margin-right: 20px;
+}
+.registration__form label{
+    margin-bottom: 0;
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.registration__input{
+    width: 420px;
+    padding: 8px 25px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+
+}
+.registration__form .form-group{
+    margin-top: 30px !important;
+}
+.registration__submit--button{
+    background-image: linear-gradient(180deg, #15af86, #06d6a0) !important;
+    color: white !important;
+}
+.registration__submit--button--container{
+    width: 420px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.registration__submit--button--container span{
+    font-size: 14px;
+}
+.good{
+    color: #15af86;
+}
+.bad{
+    font-size: 14px;
+    color: orangered;
+}

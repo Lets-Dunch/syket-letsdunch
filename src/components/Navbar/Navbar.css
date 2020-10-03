@@ -1,0 +1,17 @@
+.logo{
+    height: 60px;
+}
+.nav-link{
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #e63946 !important;
+    transition: .4s;
+    backface-visibility: hidden;
+}
+
+.nav-link:hover{
+    background-color: #e63946;
+    color: white !important;
+    transform: rotate(5deg) scale(1.1);
+    border-radius: 3px;
+}
