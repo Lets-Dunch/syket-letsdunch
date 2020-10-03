@@ -27,10 +27,11 @@ const Registration = () => {
     <div className="registration">
       <div className="row">
         <div className="col-md-6">
-          <img className="registration__leftImage" src={banner} alt="" />
+          <img className="leftImage" src={banner} alt="" />
         </div>
-        <div className="col-md-6 px-5 my-5">
-          <img className="registration__logo" src={logo} alt="" />
+        <div className="col-md-6 my-5">
+          <div className="right-side">
+          <img className="body-logo" src={logo} alt="" />
           <h3 className="registration--heading-tertiary">
             Join our community!
           </h3>
@@ -159,11 +160,12 @@ const Registration = () => {
                   Already Have an account? <Link to="/login">Login</Link>
                 </span>
 
-                <button className="btn registration__submit--button">
+                <button className="btn submit--button">
                   Join our community
                 </button>
               </div>
             </form>
+          </div>
           </div>
         </div>
       </div>

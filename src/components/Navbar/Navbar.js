@@ -7,7 +7,7 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">
+  <Navbar.Brand href="/">
       <img class="logo" src={logo} alt=""/>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />

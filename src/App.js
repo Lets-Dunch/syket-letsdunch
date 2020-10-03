@@ -12,9 +12,9 @@ const App = () => {
   return (
     <Fragment>
       <Router>
+      <NavigationBar />
         <Switch>
           <Route exact path="/">
-            <NavigationBar />
             <Welcome />
           </Route>
           <Route exact path="/registration">
