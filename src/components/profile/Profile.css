@@ -8,9 +8,10 @@
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0px 27px rgba(0, 0, 0, .5);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
     border: 2px solid white;
     position: relative;
+    margin-top: 20px;
 }
 .edit-box{
     width: 30px; 
@@ -23,7 +24,7 @@
     color: white;
     padding: 3px;
     position: absolute;
-    top: 48%;
+    top: 24%;
     left: 16.5%;
     cursor: pointer;
 
@@ -37,4 +38,13 @@
 label{
     margin-bottom: 0 !important;
     cursor: pointer;
+}
+.input-group-text{
+    background: white !important;
+}
+.form-box{
+    margin-top: 70px;
+}
+.form-box label{
+    font-weight: 700;
 }
