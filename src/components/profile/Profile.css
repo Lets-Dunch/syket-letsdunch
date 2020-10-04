@@ -76,4 +76,5 @@ label{
 .select{
     background-color: #e63946;
     color:white;
-}
+    border: 1px solid transparent !important;
+} 

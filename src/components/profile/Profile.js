@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Profile.css';
 import ProfileImage from '../../img/profile.jpg';
 import EditIcon from '@material-ui/icons/Edit';
@@ -7,6 +7,71 @@ import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 
 const Profile = () => {
+  const [selectGender, setSelectGender] = useState([]);
+  const [selectAge, setSelectAge] = useState([]);
+  const [selectCuisines, setSelectCuisines] = useState([]);
+  const [selectLove, setSelectLove] = useState([]);
+
+  const getGender = (data) => {
+    const gender = document.querySelector(`.${data}`);
+    gender.classList.toggle('select');
+
+    const hasItem = selectGender.find((gndr) => gndr === data);
+
+    if (hasItem) {
+      const remainingItem = selectGender.filter((gndr) => gndr !== hasItem);
+      setSelectGender(remainingItem);
+    } else {
+      const newItem = [...selectGender, data];
+      setSelectGender(newItem);
+    }
+  };
+
+  const getAge = (data) => {
+    const age = document.querySelector(`.${data}`);
+    age.classList.toggle('select');
+
+    const hasItem = selectAge.find((ag) => ag === data);
+
+    if (hasItem) {
+      const remainingItem = selectAge.filter((ag) => ag !== hasItem);
+      setSelectAge(remainingItem);
+    } else {
+      const newItem = [...selectAge, data];
+      setSelectAge(newItem);
+    }
+  };
+
+  const getCuisines = (data) => {
+    const cuisines = document.querySelector(`.${data}`);
+    cuisines.classList.toggle('select');
+
+    const hasItem = selectCuisines.find((cui) => cui === data);
+
+    if (hasItem) {
+      const remainingItem = selectCuisines.filter((cui) => cui !== hasItem);
+      setSelectCuisines(remainingItem);
+    } else {
+      const newItem = [...selectCuisines, data];
+      setSelectCuisines(newItem);
+    }
+  };
+
+  const getLove = (data) => {
+    const love = document.querySelector(`.${data}`);
+    love.classList.toggle('select');
+
+    const hasItem = selectLove.find((lv) => lv === data);
+
+    if (hasItem) {
+      const remainingItem = selectLove.filter((lv) => lv !== hasItem);
+      setSelectLove(remainingItem);
+    } else {
+      const newItem = [...selectLove, data];
+      setSelectLove(newItem);
+    }
+  };
+
   return (
     <div className="profile">
       <div className="container-fluid">
@@ -72,7 +137,11 @@ const Profile = () => {
                   <div className="col-md-6">
                     <div className="form-group">
                       <label htmlFor="country">Country</label>
-                      <select id="country" name="country" class="form-control">
+                      <select
+                        id="country"
+                        name="country"
+                        className="form-control"
+                      >
                         <option value="null">-- Select your country --</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
@@ -477,59 +546,194 @@ const Profile = () => {
               </h3>
               <div className="gender-box my-4">
                 <p className="box-title">Gender</p>
-                <span className="select-box">Male</span>
-                <span className="select-box">Female</span>
+                <span
+                  onClick={() => getGender('male')}
+                  className="select-box male"
+                >
+                  Male
+                </span>
+                <span
+                  onClick={() => getGender('female')}
+                  className="select-box female"
+                >
+                  Female
+                </span>
               </div>
               <div className="age-box my-4">
                 <p className="box-title">Age Group</p>
                 <div className="box-row my-3">
-                  <span className="select-box">20 - 25</span>
-                  <span className="select-box">26 - 30</span>
-                  <span className="select-box">31 - 35</span>
+                  <span
+                    onClick={() => getAge('twenty')}
+                    className="select-box twenty"
+                  >
+                    20 - 25
+                  </span>
+                  <span
+                    onClick={() => getAge('twenty-six')}
+                    className="select-box twenty-six"
+                  >
+                    26 - 30
+                  </span>
+                  <span
+                    onClick={() => getAge('thirty-one')}
+                    className="select-box thirty-one"
+                  >
+                    31 - 35
+                  </span>
                 </div>
 
                 <div className="box-row my-3">
-                  <span className="select-box">36 - 40</span>
-                  <span className="select-box">41 - 45</span>
-                  <span className="select-box">46 - 50</span>
-                  <span className="select-box">50+</span>
+                  <span
+                    onClick={() => getAge('thirty-six')}
+                    className="select-box thirty-six"
+                  >
+                    36 - 40
+                  </span>
+                  <span
+                    onClick={() => getAge('forty-one')}
+                    className="select-box forty-one"
+                  >
+                    41 - 45
+                  </span>
+                  <span
+                    onClick={() => getAge('forty-six')}
+                    className="select-box forty-six"
+                  >
+                    46 - 50
+                  </span>
+                  <span
+                    onClick={() => getAge('fifty')}
+                    className="select-box fifty"
+                  >
+                    50+
+                  </span>
                 </div>
               </div>
               <div className="cuisines my-4">
                 <p className="box-title">Cuisines</p>
                 <div className="box-row my-3">
-                  <span className="select-box">Italian</span>
-                  <span className="select-box">Indian</span>
-                  <span className="select-box">Mexican</span>
+                  <span
+                    onClick={() => getCuisines('italian')}
+                    className="select-box italian"
+                  >
+                    Italian
+                  </span>
+                  <span
+                    onClick={() => getCuisines('indian')}
+                    className="select-box indian"
+                  >
+                    Indian
+                  </span>
+                  <span
+                    onClick={() => getCuisines('mexican')}
+                    className="select-box mexican"
+                  >
+                    Mexican
+                  </span>
                 </div>
                 <div className="box-row my-3">
-                  <span className="select-box">Turkish</span>
-                  <span className="select-box">Thai</span>
-                  <span className="select-box">Japanese</span>
+                  <span
+                    onClick={() => getCuisines('turkish')}
+                    className="select-box turkish"
+                  >
+                    Turkish
+                  </span>
+                  <span
+                    onClick={() => getCuisines('thai')}
+                    className="select-box thai"
+                  >
+                    Thai
+                  </span>
+                  <span
+                    onClick={() => getCuisines('japanese')}
+                    className="select-box japanese"
+                  >
+                    Japanese
+                  </span>
                 </div>
                 <div className="box-row my-3">
-                  <span className="select-box">Greek</span>
-                  <span className="select-box">Chinese</span>
-                  <span className="select-box">French</span>
+                  <span
+                    onClick={() => getCuisines('greek')}
+                    className="select-box greek"
+                  >
+                    Greek
+                  </span>
+                  <span
+                    onClick={() => getCuisines('chinese')}
+                    className="select-box chinese"
+                  >
+                    Chinese
+                  </span>
+                  <span
+                    onClick={() => getCuisines('french')}
+                    className="select-box french"
+                  >
+                    French
+                  </span>
                 </div>
               </div>
 
               <div className="loving my-4">
                 <p className="box-title">I love..</p>
                 <div className="box-row my-3">
-                  <span className="select-box">Cooking</span>
-                  <span className="select-box">Writing</span>
-                  <span className="select-box">Dancing</span>
+                  <span
+                    onClick={() => getLove('cooking')}
+                    className="select-box cooking"
+                  >
+                    Cooking
+                  </span>
+                  <span
+                    onClick={() => getLove('writing')}
+                    className="select-box writing"
+                  >
+                    Writing
+                  </span>
+                  <span
+                    onClick={() => getLove('dancing')}
+                    className="select-box dancing"
+                  >
+                    Dancing
+                  </span>
                 </div>
                 <div className="box-row my-3">
-                  <span className="select-box">Diving</span>
-                  <span className="select-box">Gardening</span>
-                  <span className="select-box">Painting</span>
+                  <span
+                    onClick={() => getLove('diving')}
+                    className="select-box diving"
+                  >
+                    Diving
+                  </span>
+                  <span
+                    onClick={() => getLove('gardening')}
+                    className="select-box gardening"
+                  >
+                    Gardening
+                  </span>
+                  <span
+                    onClick={() => getLove('painting')}
+                    className="select-box painting"
+                  >
+                    Painting
+                  </span>
                 </div>
                 <div className="box-row my-3">
-                  <span className="select-box">Pottery</span>
-                  <span className="select-box">Photography</span>
-                  <span className="select-box">Login Drive</span>
+                  <span
+                    onClick={() => getLove('pottery')}
+                    className="select-box pottery"
+                  >
+                    Pottery
+                  </span>
+                  <span
+                    onClick={() => getLove('photography')}
+                    className="select-box photography"
+                  >
+                    Photography
+                  </span>
+                  <span
+                    onClick={() => getLove('long-drive')}
+                    className="select-box long-drive"
+                  >
+                    Long Drive
+                  </span>
                 </div>
               </div>
             </div>
