@@ -12,64 +12,35 @@ const Profile = () => {
   const [selectCuisines, setSelectCuisines] = useState([]);
   const [selectLove, setSelectLove] = useState([]);
 
-  const getGender = (data) => {
-    const gender = document.querySelector(`.${data}`);
-    gender.classList.toggle('select');
+  const selectedItems = (data, arrayItem, itemSetFunction) => {
+    const item = document.querySelector(`.${data}`);
+    item.classList.toggle('select');
 
-    const hasItem = selectGender.find((gndr) => gndr === data);
+    const hasItem = arrayItem.find((itm) => itm === data);
 
     if (hasItem) {
-      const remainingItem = selectGender.filter((gndr) => gndr !== hasItem);
-      setSelectGender(remainingItem);
+      const remainingItem = arrayItem.filter((itm) => itm !== hasItem);
+      itemSetFunction(remainingItem);
     } else {
-      const newItem = [...selectGender, data];
-      setSelectGender(newItem);
+      const newItem = [...arrayItem, data];
+      itemSetFunction(newItem);
     }
+  };
+
+  const getGender = (data) => {
+    selectedItems(data, selectGender, setSelectGender);
   };
 
   const getAge = (data) => {
-    const age = document.querySelector(`.${data}`);
-    age.classList.toggle('select');
-
-    const hasItem = selectAge.find((ag) => ag === data);
-
-    if (hasItem) {
-      const remainingItem = selectAge.filter((ag) => ag !== hasItem);
-      setSelectAge(remainingItem);
-    } else {
-      const newItem = [...selectAge, data];
-      setSelectAge(newItem);
-    }
+    selectedItems(data, selectAge, setSelectAge);
   };
 
   const getCuisines = (data) => {
-    const cuisines = document.querySelector(`.${data}`);
-    cuisines.classList.toggle('select');
-
-    const hasItem = selectCuisines.find((cui) => cui === data);
-
-    if (hasItem) {
-      const remainingItem = selectCuisines.filter((cui) => cui !== hasItem);
-      setSelectCuisines(remainingItem);
-    } else {
-      const newItem = [...selectCuisines, data];
-      setSelectCuisines(newItem);
-    }
+    selectedItems(data, selectCuisines, setSelectCuisines);
   };
 
   const getLove = (data) => {
-    const love = document.querySelector(`.${data}`);
-    love.classList.toggle('select');
-
-    const hasItem = selectLove.find((lv) => lv === data);
-
-    if (hasItem) {
-      const remainingItem = selectLove.filter((lv) => lv !== hasItem);
-      setSelectLove(remainingItem);
-    } else {
-      const newItem = [...selectLove, data];
-      setSelectLove(newItem);
-    }
+    selectedItems(data, selectLove, setSelectLove);
   };
 
   return (
