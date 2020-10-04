@@ -3,15 +3,15 @@ import './Profile.css';
 import ProfileImage from '../../img/profile.jpg';
 import EditIcon from '@material-ui/icons/Edit';
 import { Link } from 'react-router-dom';
-import { Form, InputGroup } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
 import { FormControl } from 'react-bootstrap';
 
 const Profile = () => {
   return (
     <div className="profile">
       <div className="container-fluid">
-        <div className="row my-5">
-          <div className="col-md-8">
+        <div className="row">
+          <div className="col-md-8 my-5">
             <h3 className="profile__name">Welcome Ganesh!</h3>
 
             <div className="profile__image--box">
@@ -471,10 +471,68 @@ const Profile = () => {
             </div>
           </div>
           <div className="col-md-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            dolores quo reiciendis praesentium voluptas in, eum laborum odit
-            veritatis cum id beatae temporibus reprehenderit! Necessitatibus
-            esse quas debitis eligendi atque.
+            <div className="select-box-right">
+              <h3 className="profile__right__title py-5">
+                I want to Dunch with...
+              </h3>
+              <div className="gender-box my-4">
+                <p className="box-title">Gender</p>
+                <span className="select-box">Male</span>
+                <span className="select-box">Female</span>
+              </div>
+              <div className="age-box my-4">
+                <p className="box-title">Age Group</p>
+                <div className="box-row my-3">
+                  <span className="select-box">20 - 25</span>
+                  <span className="select-box">26 - 30</span>
+                  <span className="select-box">31 - 35</span>
+                </div>
+
+                <div className="box-row my-3">
+                  <span className="select-box">36 - 40</span>
+                  <span className="select-box">41 - 45</span>
+                  <span className="select-box">46 - 50</span>
+                  <span className="select-box">50+</span>
+                </div>
+              </div>
+              <div className="cuisines my-4">
+                <p className="box-title">Cuisines</p>
+                <div className="box-row my-3">
+                  <span className="select-box">Italian</span>
+                  <span className="select-box">Indian</span>
+                  <span className="select-box">Mexican</span>
+                </div>
+                <div className="box-row my-3">
+                  <span className="select-box">Turkish</span>
+                  <span className="select-box">Thai</span>
+                  <span className="select-box">Japanese</span>
+                </div>
+                <div className="box-row my-3">
+                  <span className="select-box">Greek</span>
+                  <span className="select-box">Chinese</span>
+                  <span className="select-box">French</span>
+                </div>
+              </div>
+
+              <div className="loving my-4">
+                <p className="box-title">I love..</p>
+                <div className="box-row my-3">
+                  <span className="select-box">Cooking</span>
+                  <span className="select-box">Writing</span>
+                  <span className="select-box">Dancing</span>
+                </div>
+                <div className="box-row my-3">
+                  <span className="select-box">Diving</span>
+                  <span className="select-box">Gardening</span>
+                  <span className="select-box">Painting</span>
+                </div>
+                <div className="box-row my-3">
+                  <span className="select-box">Pottery</span>
+                  <span className="select-box">Photography</span>
+                  <span className="select-box">Login Drive</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

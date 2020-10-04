@@ -48,3 +48,32 @@ label{
 .form-box label{
     font-weight: 700;
 }
+.select-box{
+    color: gray;
+    padding: 6px 15px;
+    border-radius: 30px;
+    cursor:pointer;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
+    
+}
+.select-box:not(:last-child){
+    margin-right: 15px;
+}
+.box-title{
+    color: gray;
+}
+.select-box-right{
+    background: #eeeeee30;
+    padding: 0 16px 0 16px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+.select{
+    background-color: #e63946;
+    color:white;
+}
